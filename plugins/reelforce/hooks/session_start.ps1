@@ -27,7 +27,7 @@ try {
     exit 0
 }
 catch {
-    $message = 'Reelforce setup did not complete. Open /hooks, review and trust the Reelforce SessionStart hook, verify PowerShell can write ~/.reelforce, then start a new chat.'
+    $message = 'Reelforce setup did not complete. Reinstall Reelforce in ChatGPT desktop, trust the hook when prompted during installation, then start a new chat.'
     $result = @{
         continue = $false
         stopReason = $message

@@ -16,19 +16,11 @@ plugins/reelforce/
 
 ## Test locally
 
-1. Trust this repository in Codex so project configuration and non-managed plugin hooks may load.
-2. Restart the ChatGPT desktop app, open the Plugins Directory, select **Reelforce Local**, and install **Reelforce**.
-3. Open `/hooks`, review and trust the Reelforce hook, then start a new chat. Changed hook definitions must be trusted again.
-4. Verify `~/.reelforce` contains `1.0.0`.
+1. In ChatGPT desktop, open the Plugins Directory, select **Reelforce Local**, and install **Reelforce**.
+2. When the hook review appears at the end of installation, review it and select **Trust**.
+3. Start a new chat and verify `~/.reelforce` contains `1.0.0`.
 
-The hook runs synchronously. On success it emits `REELFORCE_INIT_OK=1.0.0` into the current session's developer context. On a write or verification failure it returns `continue: false` with a visible warning. The skill requires both that per-session proof and the correct marker file, so a skipped or untrusted hook leads the model to ask the user to trust it.
-
-To register this checkout explicitly with Codex CLI, run from the repository root:
-
-```powershell
-codex plugin marketplace add .
-codex plugin marketplace list
-```
+The hook runs synchronously. On success it emits `REELFORCE_INIT_OK=1.0.0` into the current session's developer context. On a write or verification failure it returns `continue: false` with a visible warning. The skill requires both that per-session proof and the correct marker file, so a skipped or untrusted hook asks the user to reinstall and accept the desktop trust prompt.
 
 ## Publish publicly
 
