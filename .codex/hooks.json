@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pwsh -NoProfile -Command \"& (Join-Path (& git rev-parse --show-toplevel) 'plugins/reelforce/hooks/session_start.ps1')\"",
+            "commandWindows": "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"& (Join-Path (& git rev-parse --show-toplevel) 'plugins/reelforce/hooks/session_start.ps1')\"",
+            "async": false,
+            "timeout": 10,
+            "statusMessage": "Initializing Reelforce"
+          }
+        ]
+      }
+    ]
+  }
+}

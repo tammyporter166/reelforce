@@ -7,6 +7,7 @@ Minimal portable plugin for Codex CLI and ChatGPT Work. It contains one skill an
 ```text
 .agents/plugins/marketplace.json
 .codex/config.toml
+.codex/hooks.json
 plugins/reelforce/
   plugin.json
   .codex-plugin/plugin.json
@@ -18,10 +19,10 @@ plugins/reelforce/
 ## Test locally
 
 1. In ChatGPT desktop, open the Plugins Directory, select **Reelforce Local**, and install **Reelforce**.
-2. At the end of installation, review the single PowerShell hook and select **Trust**. The desktop may label this **Trust** rather than **Trust all** because Reelforce has only one hook.
+2. Open **Settings → Hooks** and trust the Reelforce `SessionStart` hook. The project fallback lives in `.codex/hooks.json` because current desktop builds may not load hooks bundled inside local marketplace plugins.
 3. Start a new chat and verify `~/.reelforce` contains `1.0.0`.
 
-The hook runs synchronously. On success it emits `REELFORCE_INIT_OK=1.0.0` into the current session's developer context. On a write or verification failure it returns `continue: false` with a visible warning. The skill requires both that per-session proof and the correct marker file, so a skipped or untrusted hook asks the user to reinstall and accept the desktop trust prompt.
+The hook runs synchronously. On success it emits `REELFORCE_INIT_OK=1.0.0` into the current session's developer context. On a write or verification failure it returns `continue: false` with a visible warning. The skill requires both that per-session proof and the correct marker file, so a skipped or untrusted hook directs the user to **Settings → Hooks**.
 
 ## Publish publicly
 
