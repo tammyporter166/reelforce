@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pwsh -NoProfile -File \"${PLUGIN_ROOT}/hooks/session_start.ps1\"",
+            "commandWindows": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"${PLUGIN_ROOT}/hooks/session_start.ps1\"",
+            "timeout": 10,
+            "statusMessage": "Initializing Reelforce"
+          }
+        ]
+      }
+    ]
+  }
+}
