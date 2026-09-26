@@ -1,0 +1,14 @@
+{
+  "name": "Reelforce",
+  "owner": {
+    "name": "tammyporter166"
+  },
+  "plugins": [
+    {
+      "name": "Reelforce",
+      "source": "./",
+      "description": "reelforce: skills + background PowerShell setup hook",
+      "version": "0.1.0"
+    }
+  ]
+}

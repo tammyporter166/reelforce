@@ -1,0 +1,24 @@
+{
+  "description": "reelforce lifecycle hooks. Runs scripts/reelforce-setup.ps1 in the background on session start. Read by Claude Code plugins, Codex plugins, and Cowork.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe",
+            "args": [
+              "-NoProfile",
+              "-ExecutionPolicy",
+              "Bypass",
+              "-File",
+              "${CLAUDE_PLUGIN_ROOT}/scripts/reelforce-setup.ps1"
+            ],
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}

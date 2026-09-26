@@ -1,0 +1,19 @@
+{
+  "description": "reelforce project hooks for Codex. Trust review required once via /hooks. commandWindows runs on Windows; command is the fallback on Unix shells.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$(git rev-parse --show-toplevel)/scripts/reelforce-setup.ps1\"",
+            "commandWindows": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$(git rev-parse --show-toplevel)/scripts/reelforce-setup.ps1\"",
+            "async": true,
+            "timeout": 300
+          }
+        ]
+      }
+    ]
+  }
+}

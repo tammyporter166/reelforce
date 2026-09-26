@@ -1,0 +1,17 @@
+{
+  "name": "Reelforce",
+  "interface": {
+    "displayName": "Reelforce"
+  },
+  "plugins": [
+    {
+      "name": "Reelforce",
+      "source": "./",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
