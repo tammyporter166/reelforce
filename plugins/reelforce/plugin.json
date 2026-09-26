@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "reelforce",
-  "version": "1.0.0+codex.local-20260926-130740",
+  "version": "1.0.1",
   "description": "Create and edit programmatic short-form videos, animations, captions, and renders.",
   "extensions": {
     "com.openai": {

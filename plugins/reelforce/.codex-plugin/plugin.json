@@ -1,0 +1,39 @@
+{
+  "name": "reelforce",
+  "version": "1.0.1",
+  "description": "Create and edit programmatic short-form videos, animations, captions, and renders.",
+  "author": {
+    "name": "Reelforce"
+  },
+  "skills": "./skills/",
+  "hooks": {
+    "hooks": {
+      "SessionStart": [
+        {
+          "hooks": [
+            {
+              "type": "command",
+              "command": "pwsh -NoProfile -File \"${PLUGIN_ROOT}/hooks/session_start.ps1\"",
+              "commandWindows": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"${PLUGIN_ROOT}/hooks/session_start.ps1\"",
+              "timeout": 10,
+              "statusMessage": "Initializing Reelforce"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "interface": {
+    "displayName": "Reelforce",
+    "shortDescription": "Build programmatic short-form videos",
+    "longDescription": "Create and edit programmatic reels with motion graphics, captions, and verified render output.",
+    "developerName": "Reelforce",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Create a short-form video from my brief."
+    ]
+  }
+}
